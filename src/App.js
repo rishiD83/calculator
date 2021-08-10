@@ -15,6 +15,10 @@ class App extends Component {
     const result = eval(this.state.calc);
     this.setState({ calc: result });
   };
+
+  clearDisplay = () => {
+    this.setState({ calc: "" });
+  };
   render() {
     return (
       <div className="app">
@@ -36,6 +40,9 @@ class App extends Component {
           <button onClick={this.update}>0</button>
           <button onClick={this.calculate}>=</button>
           <button onClick={this.update}>+</button>
+          <button className="clear" onClick={this.clearDisplay}>
+            Clear
+          </button>
         </div>
       </div>
     );
